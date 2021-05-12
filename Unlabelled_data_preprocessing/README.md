@@ -2,7 +2,7 @@
 
 The only manual pre-processing step required for generating unlabelled images is drawing an image bounding box to mark the geographical area to be sampled. Note this only has to be done once / video (or once / every ~1,000 images). I.e. to extract 50,000 pairs, from 50,000 different original images, ~50 bounding boxes will need to drawn - estimated user time = 25 minutes. 
 
-Below are detailed instructions of how to do this with VGG Image Annotator (VIA) tool (https://www.robots.ox.ac.uk/~vgg/software/via/). The exported JSON file can be directly used with our script <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/Unlabelled_data_preprocessing/unlabelled_data_preprocessing.py">unlabelled_data_preprocessing.py</a> for augmenting pairs of images to train the self-supervised task of our network. A different approach can be taken with minor modifications to our code. 
+Below are detailed instructions on how to do this with VGG Image Annotator (VIA) tool (https://www.robots.ox.ac.uk/~vgg/software/via/). The exported JSON file can be directly used with our script <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/Unlabelled_data_preprocessing/unlabelled_data_preprocessing.py">unlabelled_data_preprocessing.py</a> for augmenting pairs of images to train the self-supervised task of our network. A different approach can be taken with minor modifications to our code. 
 
 #### Steps to produce image bounding box coordinates with required JSON format:
 
