@@ -3,26 +3,28 @@ import tensorflow as tf
 from model import *
 from lossfunctions_metrics import *
 import matplotlib.pyplot as plt
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 
 
 #Load data
-x_train = np.load('/data/x_train.npy')
-y_train = np.load('/data/y_train.npy')
+x_train = np.load('/Labelled_data/x_train.npy')
+y_train = np.load('/Labelled_data/y_train.npy')
 
 
 ind_shuff = np.random.permutation(len(x_train))
 x_train = x_train[ind_shuff]
 y_train = y_train[ind_shuff]
 
-x_val = np.load('/data/x_val.npy')
-y_val = np.load('/data/y_val.npy')
+x_val = np.load('/Labelled_data/x_val.npy')
+y_val = np.load('/Labelled_data/y_val.npy')
 
-pair1_train = np.load('/data/pair1_train.npy')
-pair2_train = np.load('/data/pair2_train.npy')
+pair1_train = np.load('./pair1_train.npy')
+pair2_train = np.load('./pair2_train.npy')
 
-pair1_val = np.load('/data/pair1_val.npy')
-pair2_val = np.load('/data/pair2_val.npy')
+pair1_val = np.load('./pair1_val.npy')
+pair2_val = np.load('./pair2_val.npy')
 
 
 rank_train = np.zeros(len(pair1_train))
@@ -150,7 +152,7 @@ for epoch in range(0,epochs):
         
     
     if np.mean(val_mae) < best_val_mae:
-        model.save_weights('weights/mt_au_mae.h5')
+        model.save_weights('./weights_mt_au_mae.h5')
         best_val_mae = np.mean(val_mae)
         
    
@@ -165,7 +167,7 @@ for epoch in range(0,epochs):
 
     if epoch > 3:       
         if (all_val_mae[epoch] + all_val_mae[epoch-1] + all_val_mae[epoch-2])/3 <  best_val_mae_MA:
-            model.save_weights('weights/mt_au_mae_MA.h5')
+            model.save_weights('./weights_mt_au_mae_MA.h5')
             best_val_mae_MA = (all_val_mae[epoch] + all_val_mae[epoch-1] + all_val_mae[epoch-2])/3
             
         
