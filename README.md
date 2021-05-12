@@ -1,6 +1,17 @@
 # Deep learning with self-supervision and uncertainty regularization to count fish in underwater images
 
-[PAPER]
+A pre-print version of this paper is available <a href="https://arxiv.org/abs/2104.14964">here</a>.
+
+### Authors
+
+Penny Tarling, Mauricio Cantor, Albert Clapés and Sergio Escalera
+
+### Overview
+
+Effective conservation actions require effective population monitoring. However, accurately counting animals in the wild to inform conservation decision-making is difficult. Monitoring populations through image sampling has made data collection cheaper, wide-reaching and less intrusive but created a need to process and analyse this data efficiently. Counting animals from such data is challenging, particularly when densely packed in noisy images. Attempting this manually is slow and expensive, while traditional computer vision methods are limited in their generalisability. Deep learning is the state-of-the-art method for many computer vision tasks, but it has yet to be properly explored to count animals. To this end, we employ deep learning, with a density-based regression approach, to count fish in low-resolution sonar images. We introduce a large dataset of sonar videos, deployed to record wild mullet schools <i>Mugil liza</i>, with a subset of 500 labelled images. We utilise abundant unlabelled data in a self-supervised task to improve the supervised counting task. For the first time in this context, by introducing uncertainty quantification, we improve model training and provide an accompanying measure of prediction uncertainty for more informed biological decision-making. Finally, we demonstrate the generalisability of our proposed counting framework through testing it on a recent benchmark dataset of high-resolution annotated underwater images from varying habitats (DeepFish). From experiments on both contrasting datasets, we demonstrate our network outperforms the few other deep learning models implemented for solving this task. By providing an open-source framework along with training data, our study puts forth an efficient deep learning template for crowd counting aquatic animals thereby contributing effective methods to assess natural populations from the ever-increasing visual data.  
+
+
+
 
 <p align="center"><img src="https://github.com/ptarling/DeepLearningFishCounting/blob/main/Figures/FIGURE2.png" align=middle width=645.87435pt height=348.58725pt/>
 </p>
@@ -27,7 +38,7 @@ Novel dataset: 105 hours of sonar video footage were recorded at the estuarine c
   ```
 ### Data 
 
-Labelled and unlabelled data can be downloaded here: 10.5281/zenodo.4717411
+Labelled and unlabelled data can be downloaded <a href="https://zenodo.org/record/4717411">here</a>.
 
 * Labelled data: 
   * 500 original images: 350 train, 70 validation, 80 test
@@ -37,7 +48,7 @@ Labelled and unlabelled data can be downloaded here: 10.5281/zenodo.4717411
 
 
 ### Weights
-Our optimal pre-trained model weights can be downloaded from here: 10.5281/zenodo.4717411
+Our optimal pre-trained model weights can be downloaded from <a href="https://zenodo.org/record/4717411">here</a>.
 
 ### Scripts
 
@@ -58,5 +69,17 @@ Our optimal pre-trained model weights can be downloaded from here: 10.5281/zenod
  1.  multitask_au(input_shape = ): default = (576,320,3). Change to match input image data size. 
  2.  model.load_weights(): script default loads our pre-trained optimal weights. Change to test different weights. 
 
-### Citations
-[CITATION]
+### Citation
+
+Please cite our paper if you use our code or ideas in your research:
+
+  ```sh
+@misc{tarling2021deep,
+      title={Deep learning with self-supervision and uncertainty regularization to count fish in underwater images}, 
+      author={Penny Tarling and Mauricio Cantor and Albert Clapés and Sergio Escalera},
+      year={2021},
+      eprint={2104.14964},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+  ```
