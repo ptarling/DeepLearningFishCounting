@@ -4,6 +4,8 @@ import glob
 import numpy as np
 from PIL import Image
 import random
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 
 
@@ -92,7 +94,7 @@ one_quarter_arr = np.zeros((patches,std_height,std_width,3))
 
 for i in range(len(video_files)):
     
-    path = ('/data-local/see4c/ptarling/{}'.format(video_files[i]))
+    path = ('./{}'.format(video_files[i]))
 
     labels = data_bb[videos[i]]['regions']
     
@@ -198,17 +200,63 @@ num_lab_img = num_train + num_val + num_test #number of train, val, test images
 
 all_data = [one_quarter, half, three_quarter, full]
 
-pair_large = np.zeros((num_lab_img,std_height,std_width,3))
-pair_small = np.zeros((num_lab_img,std_height,std_width,3))
 
-order = np.random.permutation(count_non_blank)
+#choose to generate 1 pair per image or 6 pairs per image (comment / comment out as appropriate):
 
-for i in range(num_lab_img):
-    a = random.randint(1,3) #can set a=3 (or a = random.randint(2,3)) to increase likelihood for pair 1 > pair 2 (not equal to), if this generates sufficient number of sample pairs
-    b = random.randint(0,a-1) 
-    pair_large[i] = all_data[a][order[i]]
-    pair_small[i] = all_data[b][order[i]]
+
+"""This is the code for generating one pair per original image"""
+
+#pair_large = np.zeros((num_lab_img,std_height,std_width,3))
+#pair_small = np.zeros((num_lab_img,std_height,std_width,3))
+
+#order = np.random.permutation(count_non_blank)
+
+#for i in range(num_lab_img):
+    #a = random.randint(1,3) #can set a=3 (or a = random.randint(2,3)) to increase likelihood for pair 1 > pair 2 (not equal to), if this generates sufficient number of sample pairs
+    #b = random.randint(0,a-1) 
+    #pair_large[i] = all_data[a][order[i]]
+    #pair_small[i] = all_data[b][order[i]]
     
+""""""
+
+"""This is the code for generating 6 pairs per original image"""
+
+pair_large_all = np.zeros((len(full)*6,std_height,std_width,3))
+pair_small_all = np.zeros((len(full)*6,std_height,std_width,3))
+
+pairs = 0
+for j in range(len(full)):
+        pair_large_all[pairs] = all_data[3][j]
+        pair_small_all[pairs] = all_data[2][j]
+        pairs += 1
+for j in range(len(full)):
+        pair_large_all[pairs] = all_data[3][j]
+        pair_small_all[pairs] = all_data[1][j]
+        pairs += 1
+for j in range(len(full)):
+        pair_large_all[pairs] = all_data[3][j]
+        pair_small_all[pairs] = all_data[0][j]
+        pairs += 1
+for j in range(len(full)):
+        pair_large_all[pairs] = all_data[2][j]
+        pair_small_all[pairs] = all_data[1][j]
+        pairs += 1
+for j in range(len(full)):
+        pair_large_all[pairs] = all_data[2][j]
+        pair_small_all[pairs] = all_data[0][j]
+        pairs += 1
+for j in range(len(full)):
+        pair_large_all[pairs] = all_data[1][j]
+        pair_small_all[pairs] = all_data[0][j]
+        pairs += 1
+        
+order = np.random.permutation(len(pair_large_all))
+
+pair_large = pair_large_all[order]
+pair_small = pair_small_all[order]
+
+""""""
+  
 
 pair1_train = pair_large[0:num_train]
 pair2_train = pair_small[0:num_train]
@@ -217,9 +265,9 @@ pair2_val = pair_small[num_train:num_train+num_val]
 pair1_test = pair_large[num_train+num_val:]
 pair2_test = pair_small[num_train+num_val:]
 
-np.save('/data/pair1_train_new', pair1_train)
-np.save('/data/pair2_train_new', pair2_train)
-np.save('/data/pair1_val_new', pair1_val)
-np.save('/data/pair2_val_new', pair2_val)
-np.save('/data/pair1_test_new', pair1_test)
-np.save('/data/pair2_test_new', pair2_test)
+np.save('./pair1_train_new', pair1_train)
+np.save('./pair2_train_new', pair2_train)
+np.save('./pair1_val_new', pair1_val)
+np.save('./pair2_val_new', pair2_val)
+np.save('./pair1_test_new', pair1_test)
+np.save('./pair2_test_new', pair2_test)
