@@ -52,7 +52,7 @@ Our optimal pre-trained model weights can be downloaded from <a href="https://ze
 
 ### Scripts
 
-* <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/Unlabelled_data_preprocessing/unlabelled_data_preprocessing.py">Unlabelled_data_preprocessing/unlabelled_data_augmentation.py</a>: Run this script to generate new pairs of images from unlabelled data (for training the self-supervised task) - see unlablled_data_augmentation directory for detailed instructions.
+* <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/Unlabelled_data_preprocessing/unlabelled_data_preprocessing.py">Unlabelled_data_preprocessing/unlabelled_data_preprocessing.py</a>: Run this script to generate new pairs of images from unlabelled data (for training the self-supervised task) - see unlablled_data_preprocessing directory for detailed instructions.
 * <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/model.py">model.py</a>: The architecture of our multi-task network with aleatoric uncertainty regularization
 * <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/lossfunctions_metrics.py">lossfunctions_metrics.py</a>: L<sub>1</sub> absolute loss adapted for aleatoric uncertainty regularization for training supervised counting task and pairwise ranking hinge loss used for training self-supervised ranking task.
 * <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/train.py">train.py</a>: Run this script to train and validate the model 
