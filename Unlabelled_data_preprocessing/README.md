@@ -7,9 +7,9 @@ Below are detailed instructions on how to do this with VGG Image Annotator (VIA)
 #### Steps to produce image bounding box coordinates with required JSON format:
 
 1. Select video files for data generation and convert to image
-2. Create a new project in VIA and upload ("Add file") 1 image / video
+2. Create a new project in VIA and upload ("Add file") 1 example image / video
 3. Draw a rectangular bounding box to mark the geographical sample region. (In our study, this range was 8m to 17m, an area of 4x8.5m<sup>2</sup>, - the base of the rectangular spanned the width at 8m.)
-4. Export annotations as json file
+4. Export annotations as json file (Annotation > Export Annotations (as json))
 5. Load .json file into <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/Unlabelled_data_preprocessing/unlabelled_data_preprocessing.py">unlabelled_data_preprocessing.py</a> and run
 
 #### Variables
