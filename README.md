@@ -29,7 +29,7 @@ Figure 2: Novel dataset: 105 hours of sonar video footage were recorded at the e
 ### Requirements
 
   ```sh
-  Python >= 3.6
+  Python <p style='color:black'>>.</p>= 3.6
   Tensorflow >= 2.0 
   Numpy
   Matplotlib
