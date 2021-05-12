@@ -265,9 +265,9 @@ pair2_val = pair_small[num_train:num_train+num_val]
 pair1_test = pair_large[num_train+num_val:]
 pair2_test = pair_small[num_train+num_val:]
 
-np.save('./pair1_train_new', pair1_train)
-np.save('./pair2_train_new', pair2_train)
-np.save('./pair1_val_new', pair1_val)
-np.save('./pair2_val_new', pair2_val)
-np.save('./pair1_test_new', pair1_test)
-np.save('./pair2_test_new', pair2_test)
+np.save('./pair1_train', pair1_train)
+np.save('./pair2_train', pair2_train)
+np.save('./pair1_val', pair1_val)
+np.save('./pair2_val', pair2_val)
+np.save('./pair1_test', pair1_test)
+np.save('./pair2_test', pair2_test)
