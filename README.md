@@ -28,7 +28,7 @@ Figure 2: Image pre-processing for assessing mullet abundance from sonar images.
 
 ### Requirements
 
-  ```sh
+  ```plaintext
   Python >= 3.6
   Tensorflow >= 2.0 
   ```
