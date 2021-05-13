@@ -40,7 +40,7 @@ Labelled and unlabelled data can be downloaded <a href="https://zenodo.org/recor
   * 500 original images: 350 train, 70 validation, 80 test
 
 * Unlablled data: 
-  * 126 video files which equates to > 100k image frames
+  * 126 video files (named YY-MM-DD_HHMMSS) which equates to > 100k image frames
 
 
 ### Weights
