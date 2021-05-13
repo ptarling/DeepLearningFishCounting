@@ -31,10 +31,6 @@ Figure 2: Novel dataset: 105 hours of sonar video footage were recorded at the e
   ```sh
   Python >= 3.6
   Tensorflow >= 2.0 
-  Numpy
-  Matplotlib
-  PIL
-  Random
   ```
 ### Data 
 
