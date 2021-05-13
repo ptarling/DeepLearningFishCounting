@@ -60,11 +60,9 @@ rank_val = tf.convert_to_tensor(rank_val, dtype = tf.float32)
 
 #Build model
 model = multitask_au(input_shape = (576,320,3))
-#model.load_weights('/weights_mt_au_pretrained.h5') # option to load weights from our trained model
+#model.load_weights('./weights_mt_au_pretrained.h5') # option to load weights from our trained model
                      
 optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)
-                     
-os.makedirs("weights", exist_ok=True)
     
 @tf.function
 def train_on_batch(X,p1,p2,y,diff):
