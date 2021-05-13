@@ -10,15 +10,15 @@ def results(count,ypred):
     print("                             RMSE: ", " {:.2f}".format(rmse))
 
 
-x_val = np.load('/data/x_val.npy')
-y_val = np.load('/data/y_val.npy')
-pair1_val = np.load('/data/pair1_val.npy')
-pair2_val = np.load('/data/pair2_val.npy')
+x_val = np.load('/Labelled_data/x_val.npy')
+y_val = np.load('/Labelled_data/y_val.npy')
+pair1_val = np.load('./pair1_val.npy')
+pair2_val = np.load('./pair2_val.npy')
 
-x_test = np.load('/data/x_test.npy')
-y_test = np.load('/data/y_test.npy')
-pair1_test = np.load('/data/pair1_test.npy')
-pair2_test = np.load('/data/pair2_test.npy')
+x_test = np.load('Labelled_data/x_test.npy')
+y_test = np.load('/Labelled_data/y_test.npy')
+pair1_test = np.load('./pair1_test.npy')
+pair2_test = np.load('./pair2_test.npy')
 
 #Generate ground truth fish counts from density map
 count_test = np.sum(y_test, axis=(1,2))
