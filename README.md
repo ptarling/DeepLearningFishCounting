@@ -62,7 +62,7 @@ Our optimal pre-trained model weights can be downloaded from <a href="https://ze
  4.  batch_size: script default = 10
  5.  epochs: script default = 200
 * <a href="https://github.com/ptarling/DeepLearningFishCounting/blob/main/test.py">test.py</a>: 
- 1.  multitask_au(input_shape = ): default = (576,320,3). Change to match input image data size. 
+ 1.  multitask_au(input_shape = (576,320,3)): default = (576,320,3). Change to match input image data size. 
  2.  model.load_weights(): script default loads our pre-trained optimal weights. Change to test different weights. 
 
 ### Citation
