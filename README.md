@@ -34,7 +34,7 @@ Figure 2: Image pre-processing for assessing mullet abundance from sonar images.
   ```
 ### Data 
 
-Labelled and unlabelled data can be downloaded <a href="https://zenodo.org/record/4717411">here</a>.
+Labelled and unlabelled data can be downloaded <a href="https://zenodo.org/record/4751942">here</a>.
 
 * Labelled data: 
   * 500 original images: 350 train, 70 validation, 80 test
@@ -44,7 +44,7 @@ Labelled and unlabelled data can be downloaded <a href="https://zenodo.org/recor
 
 
 ### Weights
-Our optimal pre-trained model weights can be downloaded from <a href="https://zenodo.org/record/4717411">here</a>.
+Our optimal pre-trained model weights can be downloaded from <a href="https://zenodo.org/record/4751942">here</a>.
 
 ### Scripts
 
