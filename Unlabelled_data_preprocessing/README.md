@@ -6,7 +6,7 @@ Below are detailed instructions on how to do this with VGG Image Annotator (VIA)
 
 #### Steps to produce image bounding box coordinates with required JSON format:
 
-1. Select and download (<a href="https://zenodo.org/record/4717411">here</a>) video files for data generation and convert to image
+1. Select and download (<a href="https://zenodo.org/record/4751942">here</a>) video files for data generation and convert to image
 2. Create a new project in VIA and upload ("Add file") 1 example image / video
 3. Draw a rectangular bounding box to mark the geographical sample region. (In our study, this range was 8m to 17m, an area of 4x8.5m<sup>2</sup>, - the base of the rectangular spanned the width at 8m.)
 4. Export annotations as json file (Annotation > Export Annotations (as json))
