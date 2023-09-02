@@ -1,0 +1,7 @@
+data/
+
+**/__pycache__/
+
+**/unlabel_images/
+
+**/8-17m/
